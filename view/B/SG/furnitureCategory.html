@@ -16,7 +16,8 @@
                 }).then(function (data) {
                     var htmlTxt = '';
                    
-                        var furniture = data[0];
+                for(var i = 0; i < data.length; i++){
+                        var furniture = data[i];
                         //generate html for furnitures
                         htmlTxt += '\
                             <li class="col-md-3 col-sm-6 col-xs-12 product" style="padding-bottom: 1%;padding-top: 2%;">\
@@ -54,7 +55,7 @@
                             htmlTxt += '<button class="btn btn-primary btn-block" onclick="addToCart(\'' + furniture.sku +
                                 '\',\'' + furniture.id + '\',' + furniture.price + ',\'' + furniture.name + '\',\'' + furniture.imageURL +
                                 '\')">Add To Cart</button>';
-                        }
+                        }}
                         htmlTxt += '</span></span></li>';
                    
                     document.getElementById("furnituresDisplay").innerHTML = htmlTxt;
