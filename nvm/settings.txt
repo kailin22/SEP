@@ -1,0 +1,2 @@
+root: C:\Users\shang\Desktop\SEP\SEP\nvm
+path: C:\Program Files\nodejs
