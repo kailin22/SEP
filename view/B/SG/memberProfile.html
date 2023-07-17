@@ -70,7 +70,8 @@
                                 }
                             }
                         }
-                        for(p = 0; p < boughtItem.length; p++){
+                        
+                        for(p = 0; p < orderIdList.length; p++){
 
                             htmlTxt += '<h5>Order #' + (p + 1) + '</h5>';
                             var counter = 0;
@@ -173,7 +174,7 @@
                     console.log(error);
                 });
             }, false);
-
+            
             function addWorkDays(startDate, days) {
                 var dow = startDate.getDay();
                 var daysToAdd = parseInt(days);
