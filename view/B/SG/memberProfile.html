@@ -30,6 +30,26 @@
             document.addEventListener('DOMContentLoaded', function(){
                 member = JSON.parse(sessionStorage.getItem("member"));
 
+                if (member != null) {
+                                const Name = document.getElementById("name");
+                                const Email = document.getElementById("email");
+                                const Phone = document.getElementById("phone");
+                                const Country = document.getElementById("country");
+                                const Address = document.getElementById("address");
+                                const SecurityAnswer = document.getElementById("securityAnswer");
+                                const Age = document.getElementById("age");
+                                const Income = document.getElementById("income");
+
+                                Name.value = member.name;  
+                                Email.value = member.email;
+                                Phone.value = member.phone;
+                                Country.value = member.country;
+                                Address.value = member.address;
+                                SecurityAnswer.value = member.securityAnswer;
+                                Age.value = member.age;
+                                Income.value = member.income;
+                }
+
                 if(member.sla == 1) {
                     document.getElementById("serviceLevelAgreement").checked = true;
                 }
@@ -255,7 +275,7 @@
                             sla: document.getElementById("serviceLevelAgreement").checked ? 1:0,
                             password: document.getElementById("password").value
                         };
-                        
+
                         fetch(new Request('/api/updateMember',
                         {
                             method: 'PUT',
