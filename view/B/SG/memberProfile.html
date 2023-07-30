@@ -216,6 +216,39 @@
                 return startDate.toLocaleDateString("en-US", options);
             }
 
+            function resetForm(){
+
+                // var form = document.getElementById("profileForm");
+                // for (var i =0; i < form.elements.length; i++) {
+                //     var element = form.elements[i];
+
+                //     // Check if the element is not the email input field
+                //     if (element.id !== "email" && element.type !== "checkbox") {
+                //         // Clear the value of the input field
+                //         element.value = "";
+                //     }
+                //     // Uncheck the checkbox
+                //     if (element.type === "checkbox") {
+                //         element.checked = false;
+                //     }
+                // }
+                // Get the form element
+                var form = document.getElementById("profileForm");
+
+                // Save the values of email and checkbox fields
+                var emailValue = form.email.value;
+
+                // Reset the form
+                form.reset();
+
+                // Set the email field value back
+                form.email.value = emailValue;
+
+                // Reset the checkbox
+                var checkbox = document.getElementById("serviceLevelAgreement");
+                checkbox.checked = checkbox.defaultChecked;
+                }
+
             async function submitForm() {
                 var oldPassword = document.getElementById('oldPassword').value;
                 var password = document.getElementById("password").value;
@@ -346,7 +379,7 @@
                                         </div>
                                         <div class="form-group">
                                             <label>E-mail Address</label>
-                                            <input class="form-control" required="true" id="email" disabled />
+                                            <input class="form-control" required="true" id="email" readonly />
                                         </div>
                                         <div class="form-group">
                                             <label>Phone</label>
@@ -650,7 +683,7 @@
                                             <div class="row">
                                                 <div class="form-group">
                                                     <input type="submit" onclick="submitForm()" value="Submit" class="btn btn-primary"/>
-                                                    <input type="reset" value="Reset" class="btn btn-primary"/>
+                                                    <input type="button" onclick="resetForm()" value="Reset" class="btn btn-primary"/>
                                                 </div>
                                             </div>
                                         </div>
