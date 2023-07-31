@@ -218,33 +218,12 @@
 
             function resetForm(){
 
-                // var form = document.getElementById("profileForm");
-                // for (var i =0; i < form.elements.length; i++) {
-                //     var element = form.elements[i];
-
-                //     // Check if the element is not the email input field
-                //     if (element.id !== "email" && element.type !== "checkbox") {
-                //         // Clear the value of the input field
-                //         element.value = "";
-                //     }
-                //     // Uncheck the checkbox
-                //     if (element.type === "checkbox") {
-                //         element.checked = false;
-                //     }
-                // }
-                // Get the form element
                 var form = document.getElementById("profileForm");
-
-                // Save the values of email and checkbox fields
                 var emailValue = form.email.value;
 
-                // Reset the form
                 form.reset();
-
-                // Set the email field value back
                 form.email.value = emailValue;
 
-                // Reset the checkbox
                 var checkbox = document.getElementById("serviceLevelAgreement");
                 checkbox.checked = checkbox.defaultChecked;
                 }
